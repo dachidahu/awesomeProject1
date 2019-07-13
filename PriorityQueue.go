@@ -100,7 +100,3 @@ func TopK(s string, k int) *PriorityQueue1 {
 	return &pq
 
 }
-
-func main() {
-	TopK("Practice makes perfect. you'll only get Perfect by practice. just practice!", 2)
-}
