@@ -22,3 +22,17 @@ func solve(str string) string {
 	}
 	return ansStr
 }
+
+func lengthOfLongestSubstring(str string) int {
+	ans := 0
+	dict := map[rune]int{}
+	left := 0
+	for i, r := range str {
+		if v, ok := dict[r]; ok && v >= left {
+			left = dict[r] + 1
+		}
+		dict[r] = i
+		ans = max(ans, i-left+1)
+	}
+	return ans
+}
